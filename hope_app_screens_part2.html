@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hope App — More Screen Designs</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --teal: #00BCD4;
+  --teal-dark: #0097A7;
+  --teal-glow: rgba(0,188,212,0.18);
+  --purple: #7B2D8B;
+  --purple-light: #9C4DB5;
+  --purple-glow: rgba(123,45,139,0.2);
+  --black: #000000;
+  --card: #0D0D0D;
+  --border: rgba(0,188,212,0.15);
+  --white: #FFFFFF;
+  --grey: #9CA3AF;
+  --grey2: #4B5563;
+  --grey3: #1F2937;
+  --green: #10B981;
+  --red: #EF4444;
+  --yellow: #F59E0B;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #050508; font-family: 'Outfit', sans-serif; color: var(--white); min-height: 100vh; }
+
+.page-header { text-align: center; padding: 52px 20px 36px; position: relative; }
+.page-header::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 300px;
+  background: radial-gradient(ellipse, rgba(0,188,212,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-header h1 { font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+.page-header h2 {
+  font-size: 38px; font-weight: 800; letter-spacing: -1px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--purple-light) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;
+}
+.page-header p { font-size: 14px; color: var(--grey); font-family: 'DM Sans', sans-serif; }
+
+.grid { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; padding: 20px 40px 60px; max-width: 1500px; margin: 0 auto; }
+
+/* PHONE */
+.phone-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.phone-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); opacity: 0.7; }
+.phone {
+  width: 300px; height: 620px; background: #0A0A0F; border-radius: 44px;
+  border: 1.5px solid rgba(0,188,212,0.2); overflow: hidden; position: relative;
+  box-shadow: 0 0 0 6px #111, 0 0 40px rgba(0,188,212,0.08), 0 32px 64px rgba(0,0,0,0.7);
+  flex-shrink: 0;
+}
+.phone::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 90px; height: 26px; background: #0A0A0F; border-radius: 0 0 18px 18px; z-index: 100;
+  border: 1.5px solid rgba(0,188,212,0.15); border-top: none;
+}
+.screen { width: 100%; height: 100%; overflow: hidden; position: relative; background: #07070E; }
+
+/* STATUS BAR */
+.sb { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px 4px; font-size: 10px; font-weight: 600; color: var(--white); position: relative; z-index: 10; }
+.sb-r { display: flex; gap: 5px; align-items: center; }
+
+/* GRADIENT BG */
+.gbg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(123,45,139,0.22) 0%, transparent 55%),
+              radial-gradient(ellipse at 70% 80%, rgba(0,188,212,0.12) 0%, transparent 50%), #07070E;
+}
+.gbg2 {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 10%, rgba(0,188,212,0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 20% 80%, rgba(123,45,139,0.18) 0%, transparent 50%), #07070E;
+}
+
+/* COMMON */
+.sec-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.1); border-radius: 16px; padding: 14px; }
+.input-wrap { margin-bottom: 10px; }
+.inp-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--teal); margin-bottom: 4px; display: block; }
+.inp {
+  width: 100%; padding: 10px 14px; border-radius: 12px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(0,188,212,0.2);
+  color: var(--grey2); font-family: 'Outfit', sans-serif; font-size: 11px;
+}
+.btn-p {
+  width: 100%; padding: 13px; border-radius: 16px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: #000; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px;
+}
+.btn-o {
+  width: 100%; padding: 12px; border-radius: 16px; cursor: pointer;
+  background: transparent; border: 1.5px solid rgba(0,188,212,0.3);
+  color: var(--teal); font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 12px;
+}
+.tag {
+  display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 20px;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.5px;
+}
+.tag-teal { background: rgba(0,188,212,0.12); border: 1px solid rgba(0,188,212,0.25); color: var(--teal); }
+.tag-purple { background: rgba(123,45,139,0.15); border: 1px solid rgba(156,77,181,0.3); color: var(--purple-light); }
+.tag-green { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); color: var(--green); }
+.tag-red { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); color: var(--red); }
+.tag-yellow { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); color: var(--yellow); }
+
+/* BOTTOM NAV */
+.bnav {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(10,10,15,0.96); border-top: 1px solid rgba(0,188,212,0.1);
+  padding: 8px 0 14px; display: flex; justify-content: space-around; z-index: 50;
+}
+.ni { display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; }
+.ni-icon { font-size: 17px; }
+.ni-lbl { font-size: 8px; font-weight: 600; letter-spacing: 0.3px; }
+.ni.active .ni-lbl { color: var(--teal); }
+.ni.active .ni-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); margin-top: 1px; }
+.ni:not(.active) .ni-lbl { color: var(--grey2); }
+
+/* BACK BAR */
+.back-bar { display: flex; align-items: center; justify-content: space-between; padding: 6px 18px 4px; position: relative; z-index: 5; }
+.back-btn { font-size: 11px; color: var(--teal); font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+.back-title { font-size: 13px; font-weight: 700; }
+
+/* ── AVATAR ── */
+.av { border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 1: REGISTRATION
+══════════════════════════════════════════ */
+.reg-scroll { padding: 0 20px 20px; position: relative; z-index: 2; height: calc(100% - 60px); overflow-y: auto; }
+.role-row { display: flex; gap: 8px; margin-bottom: 14px; }
+.role-card {
+  flex: 1; border-radius: 14px; padding: 12px 8px; text-align: center; cursor: pointer;
+  border: 1.5px solid; transition: all 0.2s;
+}
+.role-card.selected { background: rgba(0,188,212,0.1); border-color: var(--teal); }
+.role-card.unsel { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+.role-icon { font-size: 22px; margin-bottom: 4px; }
+.role-name { font-size: 11px; font-weight: 700; }
+.role-sub { font-size: 9px; color: var(--grey); margin-top: 2px; }
+.step-indicator { display: flex; align-items: center; gap: 4px; margin-bottom: 16px; }
+.step-dot { width: 28px; height: 4px; border-radius: 2px; }
+.step-dot.done { background: var(--teal); }
+.step-dot.curr { background: var(--purple-light); }
+.step-dot.todo { background: var(--grey2); }
+.reg-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+.reg-sub { font-size: 10px; color: var(--grey); font-family: 'DM Sans', sans-serif; margin-bottom: 14px; }
+.inp-row { display: flex; gap: 8px; }
+.inp-row .input-wrap { flex: 1; }
+.terms-row { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0; }
+.checkbox { width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid var(--teal); background: rgba(0,188,212,0.15); display: flex; align-items: center; justify-content: center; font-size: 8px; color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+.terms-txt { font-size: 9px; color: var(--grey); line-height: 1.5; }
+.terms-txt span { color: var(--teal); }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 2: MY SESSIONS
+══════════════════════════════════════════ */
+.sessions-tabs { display: flex; border-bottom: 1px solid rgba(255,255,255,0.06); margin: 0 18px 12px; }
+.stab { flex: 1; text-align: center; padding: 8px 4px; font-size: 10px; font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; }
+.stab.active { color: var(--teal); border-bottom-color: var(--teal); }
+.stab:not(.active) { color: var(--grey2); }
+.sessions-list { padding: 0 18px; overflow-y: auto; height: 420px; padding-bottom: 70px; }
+.sess-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.1);
+  border-radius: 16px; padding: 12px; margin-bottom: 10px; position: relative; overflow: hidden;
+}
+.sess-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 2px; }
+.sess-card.upcoming::before { background: var(--teal); }
+.sess-card.completed::before { background: var(--green); }
+.sess-card.cancelled::before { background: var(--red); }
+.sess-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.sess-avatar { width: 36px; height: 36px; border-radius: 12px; background: rgba(0,188,212,0.15); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.sess-name { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+.sess-cat { font-size: 9px; color: var(--grey); }
+.sess-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.sess-info { font-size: 9px; color: var(--grey); display: flex; align-items: center; gap: 3px; }
+.sess-actions { display: flex; gap: 6px; margin-top: 10px; }
+.sess-btn { flex: 1; padding: 7px; border-radius: 10px; font-size: 10px; font-weight: 600; text-align: center; cursor: pointer; border: none; font-family: 'Outfit', sans-serif; }
+.sess-btn.primary { background: var(--teal); color: #000; }
+.sess-btn.secondary { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: var(--grey); }
+.sess-btn.danger { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.2); color: var(--red); }
+.rating-input { display: flex; gap: 3px; margin-top: 6px; }
+.star-r { font-size: 14px; cursor: pointer; }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 3: CHAT
+══════════════════════════════════════════ */
+.chat-list { padding: 0 16px; overflow-y: auto; height: 490px; }
+.chat-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); cursor: pointer; }
+.chat-av { width: 42px; height: 42px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; position: relative; }
+.online-dot { position: absolute; bottom: 2px; right: 2px; width: 9px; height: 9px; border-radius: 50%; background: var(--green); border: 2px solid #07070E; }
+.chat-info { flex: 1; min-width: 0; }
+.chat-name { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+.chat-prev { font-size: 10px; color: var(--grey); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.chat-time { font-size: 9px; color: var(--grey2); }
+.unread-badge { background: var(--teal); color: #000; border-radius: 10px; font-size: 9px; font-weight: 700; padding: 1px 6px; min-width: 18px; text-align: center; }
+.chat-search { margin: 6px 16px 10px; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,188,212,0.15); border-radius: 12px; padding: 8px 12px; }
+.chat-search span { font-size: 10px; color: var(--grey2); }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 4: CHAT THREAD
+══════════════════════════════════════════ */
+.thread-header {
+  display: flex; align-items: center; gap: 10px; padding: 6px 16px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 5;
+}
+.thread-av { width: 36px; height: 36px; border-radius: 12px; background: rgba(0,188,212,0.15); display: flex; align-items: center; justify-content: center; font-size: 16px; position: relative; }
+.thread-name { font-size: 13px; font-weight: 700; }
+.thread-status { font-size: 9px; color: var(--green); }
+.thread-actions { margin-left: auto; display: flex; gap: 10px; font-size: 16px; }
+.messages-area { padding: 12px 16px; overflow-y: auto; height: 380px; display: flex; flex-direction: column; gap: 10px; }
+.msg-wrap { display: flex; flex-direction: column; }
+.msg-wrap.them { align-items: flex-start; }
+.msg-wrap.me { align-items: flex-end; }
+.msg-bubble { max-width: 200px; padding: 9px 12px; border-radius: 16px; font-size: 11px; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
+.msg-wrap.them .msg-bubble { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.06); border-bottom-left-radius: 4px; color: var(--white); }
+.msg-wrap.me .msg-bubble { background: linear-gradient(135deg, rgba(0,188,212,0.3), rgba(0,151,167,0.4)); border: 1px solid rgba(0,188,212,0.3); border-bottom-right-radius: 4px; color: var(--white); }
+.msg-time { font-size: 8px; color: var(--grey2); margin-top: 3px; padding: 0 4px; }
+.msg-doc { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(0,188,212,0.15); border-radius: 12px; padding: 8px 10px; max-width: 200px; }
+.msg-doc-icon { font-size: 20px; }
+.msg-doc-info .md-name { font-size: 10px; font-weight: 700; }
+.msg-doc-info .md-size { font-size: 9px; color: var(--grey); }
+.chat-input-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 10px 14px 22px; background: rgba(10,10,15,0.97);
+  border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px;
+}
+.chat-inp { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(0,188,212,0.15); border-radius: 20px; padding: 8px 14px; font-size: 11px; color: var(--grey2); font-family: 'Outfit', sans-serif; }
+.send-btn { width: 36px; height: 36px; border-radius: 12px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; flex-shrink: 0; }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 5: TRAINER DASHBOARD
+══════════════════════════════════════════ */
+.dash-header { padding: 4px 18px 12px; position: relative; z-index: 2; }
+.dash-greeting { font-size: 10px; color: var(--grey); }
+.dash-name { font-size: 16px; font-weight: 800; margin-bottom: 10px; }
+.earnings-card {
+  background: linear-gradient(135deg, rgba(123,45,139,0.4), rgba(0,188,212,0.25));
+  border: 1px solid rgba(0,188,212,0.2); border-radius: 18px; padding: 14px; margin-bottom: 12px;
+}
+.earnings-label { font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 4px; }
+.earnings-val { font-size: 28px; font-weight: 900; }
+.earnings-sub { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.earnings-row { display: flex; gap: 8px; margin-top: 10px; }
+.earn-mini { flex: 1; background: rgba(0,0,0,0.2); border-radius: 10px; padding: 8px; text-align: center; }
+.earn-mini-val { font-size: 13px; font-weight: 800; color: var(--teal); }
+.earn-mini-lbl { font-size: 8px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+.dash-body { padding: 0 18px; position: relative; z-index: 2; overflow-y: auto; height: 360px; padding-bottom: 70px; }
+.request-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.1); border-radius: 14px; padding: 10px; margin-bottom: 8px; }
+.req-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.req-av { width: 32px; height: 32px; border-radius: 10px; background: rgba(123,45,139,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.req-name { font-size: 11px; font-weight: 700; }
+.req-meta { font-size: 9px; color: var(--grey); }
+.req-btns { display: flex; gap: 6px; }
+.req-btn { flex: 1; padding: 6px; border-radius: 8px; font-size: 10px; font-weight: 600; text-align: center; cursor: pointer; border: none; font-family: 'Outfit', sans-serif; }
+.req-btn.acc { background: rgba(0,188,212,0.15); border: 1px solid rgba(0,188,212,0.3); color: var(--teal); }
+.req-btn.dec { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: var(--red); }
+.stats-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.stat-box { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.08); border-radius: 12px; padding: 10px 8px; text-align: center; }
+.stat-val { font-size: 16px; font-weight: 800; color: var(--teal); }
+.stat-lbl { font-size: 8px; color: var(--grey); margin-top: 2px; }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 6: UPLOAD DOCUMENTS
+══════════════════════════════════════════ */
+.upload-body { padding: 0 18px; position: relative; z-index: 2; overflow-y: auto; height: 520px; padding-bottom: 20px; }
+.upload-zone {
+  border: 2px dashed rgba(0,188,212,0.3); border-radius: 18px; padding: 24px 16px;
+  text-align: center; background: rgba(0,188,212,0.04); margin-bottom: 16px; cursor: pointer;
+}
+.upload-zone-icon { font-size: 36px; margin-bottom: 8px; }
+.upload-zone-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.upload-zone-sub { font-size: 10px; color: var(--grey); margin-bottom: 12px; }
+.file-types { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.ft-chip { padding: 3px 9px; border-radius: 8px; background: rgba(255,255,255,0.06); font-size: 9px; color: var(--grey); }
+.uploaded-list { margin-bottom: 14px; }
+.uploaded-item { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.1); border-radius: 12px; padding: 10px; margin-bottom: 8px; }
+.file-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.file-info { flex: 1; min-width: 0; }
+.file-name { font-size: 11px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-meta { font-size: 9px; color: var(--grey); margin-top: 2px; }
+.file-actions { display: flex; gap: 6px; font-size: 14px; }
+.vis-toggle { display: flex; background: rgba(255,255,255,0.05); border-radius: 10px; padding: 3px; margin-bottom: 14px; }
+.vis-opt { flex: 1; padding: 6px; text-align: center; border-radius: 8px; font-size: 10px; font-weight: 600; cursor: pointer; }
+.vis-opt.active { background: var(--teal); color: #000; }
+.vis-opt:not(.active) { color: var(--grey2); }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 7: PROFILE
+══════════════════════════════════════════ */
+.profile-hero { position: relative; height: 140px; overflow: hidden; }
+.profile-hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(123,45,139,0.5), rgba(0,188,212,0.3));
+}
+.profile-hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding-top: 30px; }
+.profile-av { width: 60px; height: 60px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 2px solid var(--teal); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 6px; }
+.profile-name { font-size: 14px; font-weight: 800; }
+.profile-plan { font-size: 9px; margin-top: 2px; }
+.profile-body { padding: 0 18px; overflow-y: auto; height: 430px; padding-bottom: 70px; }
+.usage-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.12); border-radius: 16px; padding: 14px; margin: 12px 0; }
+.usage-label { font-size: 9px; color: var(--grey); margin-bottom: 6px; display: flex; justify-content: space-between; }
+.usage-label span { color: var(--teal); font-weight: 700; }
+.usage-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.usage-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--purple-light)); border-radius: 3px; }
+.menu-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); cursor: pointer; }
+.menu-icon { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.menu-label { font-size: 12px; font-weight: 600; flex: 1; }
+.menu-chevron { font-size: 12px; color: var(--grey2); }
+.menu-badge { background: var(--teal); color: #000; border-radius: 8px; padding: 1px 7px; font-size: 9px; font-weight: 700; }
+
+
+/* ══════════════════════════════════════════
+   SCREEN 8: TRAINER EARNINGS
+══════════════════════════════════════════ */
+.earn-header { padding: 4px 18px 10px; position: relative; z-index: 2; }
+.earn-title { font-size: 18px; font-weight: 800; margin-bottom: 3px; }
+.earn-subtitle { font-size: 10px; color: var(--grey); }
+.earn-body { padding: 0 18px; position: relative; z-index: 2; overflow-y: auto; height: 490px; padding-bottom: 70px; }
+.period-toggle { display: flex; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 3px; margin-bottom: 14px; }
+.period-opt { flex: 1; padding: 7px; text-align: center; border-radius: 10px; font-size: 10px; font-weight: 600; cursor: pointer; }
+.period-opt.active { background: var(--teal); color: #000; }
+.period-opt:not(.active) { color: var(--grey2); }
+.total-earn-card {
+  background: linear-gradient(135deg, rgba(0,188,212,0.2), rgba(123,45,139,0.25));
+  border: 1px solid rgba(0,188,212,0.2); border-radius: 18px; padding: 18px; margin-bottom: 14px; text-align: center;
+}
+.te-label { font-size: 9px; color: rgba(255,255,255,0.5); letter-spacing: 1.5px; margin-bottom: 5px; }
+.te-val { font-size: 32px; font-weight: 900; background: linear-gradient(135deg, var(--teal), var(--purple-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.te-sub { font-size: 10px; color: var(--grey); margin-top: 4px; }
+.mini-stats { display: flex; gap: 8px; margin-bottom: 14px; }
+.ms-box { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,188,212,0.08); border-radius: 12px; padding: 10px; text-align: center; }
+.ms-val { font-size: 14px; font-weight: 800; color: var(--teal); }
+.ms-lbl { font-size: 8px; color: var(--grey); margin-top: 2px; }
+.earn-history-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.ehi-av { width: 34px; height: 34px; border-radius: 10px; background: rgba(123,45,139,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.ehi-info { flex: 1; }
+.ehi-name { font-size: 11px; font-weight: 700; }
+.ehi-meta { font-size: 9px; color: var(--grey); margin-top: 1px; }
+.ehi-amount { font-size: 13px; font-weight: 800; color: var(--green); }
+.withdraw-btn { width: 100%; padding: 13px; border-radius: 16px; border: none; cursor: pointer; background: linear-gradient(135deg, var(--teal), var(--purple)); color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; margin-top: 14px; }
+
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Hope App · More Screens</h1>
+  <h2>Part 2 — Screen Designs</h2>
+  <p>Registration · My Sessions · Chat · Thread · Trainer Dashboard · Upload Docs · Profile · Earnings</p>
+</div>
+
+<div class="grid">
+
+<!-- ══════════════════════════════════════════
+     SCREEN 1: REGISTRATION
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Registration</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>●●●</span><span>🔋</span></div></div>
+      <div class="reg-scroll">
+        <div class="step-indicator">
+          <div class="step-dot done"></div>
+          <div class="step-dot curr"></div>
+          <div class="step-dot todo"></div>
+        </div>
+        <div class="reg-title">Create Account</div>
+        <div class="reg-sub">Join Hope — a brighter tomorrow starts here</div>
+
+        <!-- Role Selection -->
+        <div class="sec-title" style="margin-bottom:8px">I am a</div>
+        <div class="role-row" style="margin-bottom:14px">
+          <div class="role-card selected">
+            <div class="role-icon">🙋</div>
+            <div class="role-name" style="color:var(--teal)">User</div>
+            <div class="role-sub">Seek guidance & counseling</div>
+          </div>
+          <div class="role-card unsel">
+            <div class="role-icon">🎓</div>
+            <div class="role-name" style="color:var(--grey)">Trainer</div>
+            <div class="role-sub">Offer sessions & coaching</div>
+          </div>
+        </div>
+
+        <div class="inp-row">
+          <div class="input-wrap"><label class="inp-label">First Name</label><div class="inp">John</div></div>
+          <div class="input-wrap"><label class="inp-label">Last Name</label><div class="inp">Doe</div></div>
+        </div>
+        <div class="input-wrap"><label class="inp-label">Email Address</label><div class="inp">john@example.com</div></div>
+        <div class="input-wrap"><label class="inp-label">Phone Number</label><div class="inp">+91 98765 43210</div></div>
+        <div class="input-wrap"><label class="inp-label">Password</label><div class="inp">••••••••</div></div>
+
+        <div class="terms-row">
+          <div class="checkbox">✓</div>
+          <div class="terms-txt">I agree to the <span>Terms of Service</span> and <span>Privacy Policy</span> of Hope App</div>
+        </div>
+
+        <button class="btn-p" style="margin-bottom:8px">Create Account →</button>
+        <div style="text-align:center;font-size:10px;color:var(--grey)">Already have an account? <span style="color:var(--teal);font-weight:600">Sign In</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 2: MY SESSIONS
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">My Sessions</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg2"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔔</span><span>🔋</span></div></div>
+      <div style="padding:4px 18px 0;position:relative;z-index:2">
+        <div style="font-size:18px;font-weight:800;margin-bottom:12px">My Sessions</div>
+      </div>
+      <div class="sessions-tabs" style="position:relative;z-index:2">
+        <div class="stab active">Upcoming</div>
+        <div class="stab">Completed</div>
+        <div class="stab">Cancelled</div>
+      </div>
+      <div class="sessions-list" style="position:relative;z-index:2">
+
+        <!-- Upcoming session -->
+        <div class="sess-card upcoming">
+          <div class="sess-top">
+            <div class="sess-avatar">👩‍⚕️</div>
+            <div style="flex:1">
+              <div class="sess-name">Dr. Priya Sharma</div>
+              <div class="sess-cat">🧠 Psychiatric Counselor</div>
+            </div>
+            <div class="tag tag-teal">📹 Video</div>
+          </div>
+          <div class="sess-meta">
+            <div class="sess-info">📅 Today, 2:00 PM</div>
+            <div class="sess-info">⏱ 45 min</div>
+            <div class="sess-info">🕐 Starts in 2h</div>
+          </div>
+          <div class="sess-actions">
+            <div class="sess-btn primary">Join Session</div>
+            <div class="sess-btn secondary">Reschedule</div>
+            <div class="sess-btn danger">Cancel</div>
+          </div>
+        </div>
+
+        <!-- Upcoming session 2 -->
+        <div class="sess-card upcoming">
+          <div class="sess-top">
+            <div class="sess-avatar" style="background:rgba(123,45,139,0.2)">👨‍💼</div>
+            <div style="flex:1">
+              <div class="sess-name">Pastor James K.</div>
+              <div class="sess-cat">🙏 Spiritual Director</div>
+            </div>
+            <div class="tag tag-purple">🎙 Audio</div>
+          </div>
+          <div class="sess-meta">
+            <div class="sess-info">📅 Tomorrow, 10:00 AM</div>
+            <div class="sess-info">⏱ 60 min</div>
+          </div>
+          <div class="sess-actions">
+            <div class="sess-btn secondary">Reschedule</div>
+            <div class="sess-btn danger">Cancel</div>
+          </div>
+        </div>
+
+        <!-- Completed -->
+        <div class="sess-card completed">
+          <div class="sess-top">
+            <div class="sess-avatar" style="background:rgba(16,185,129,0.1)">👩‍🏫</div>
+            <div style="flex:1">
+              <div class="sess-name">Dr. Meera Nair</div>
+              <div class="sess-cat">💚 Life Coach</div>
+            </div>
+            <div class="tag tag-green">✓ Done</div>
+          </div>
+          <div class="sess-meta">
+            <div class="sess-info">📅 May 20 · 3:00 PM</div>
+            <div class="sess-info">⏱ 30 min</div>
+          </div>
+          <div class="rating-input">
+            <span class="star-r">⭐</span><span class="star-r">⭐</span><span class="star-r">⭐</span><span class="star-r">⭐</span><span class="star-r">☆</span>
+            <span style="font-size:9px;color:var(--grey);margin-left:4px">Rate this session</span>
+          </div>
+          <div class="sess-actions">
+            <div class="sess-btn secondary">Re-book</div>
+            <div class="sess-btn primary">Write Review</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="bnav">
+        <div class="ni"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div></div>
+        <div class="ni"><div class="ni-icon">🔍</div><div class="ni-lbl">Explore</div></div>
+        <div class="ni active"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div><div class="ni-dot"></div></div>
+        <div class="ni"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div></div>
+        <div class="ni"><div class="ni-icon">👤</div><div class="ni-lbl">Profile</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 3: CHAT LIST
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Chat</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔔</span><span>🔋</span></div></div>
+      <div style="padding:4px 18px 8px;position:relative;z-index:2">
+        <div style="font-size:18px;font-weight:800">Messages</div>
+      </div>
+      <div class="chat-search" style="position:relative;z-index:2">
+        <span>🔍</span><span>Search conversations...</span>
+      </div>
+      <div class="chat-list" style="position:relative;z-index:2">
+
+        <div class="chat-item">
+          <div class="chat-av" style="background:rgba(0,188,212,0.15)">
+            👩‍⚕️<div class="online-dot"></div>
+          </div>
+          <div class="chat-info">
+            <div class="chat-name">Dr. Priya Sharma</div>
+            <div class="chat-prev">See you in today's session! I've sent the prep doc...</div>
+          </div>
+          <div class="chat-meta">
+            <div class="chat-time">2:15 PM</div>
+            <div class="unread-badge">3</div>
+          </div>
+        </div>
+
+        <div class="chat-item">
+          <div class="chat-av" style="background:rgba(123,45,139,0.2)">👨‍💼</div>
+          <div class="chat-info">
+            <div class="chat-name">Pastor James K.</div>
+            <div class="chat-prev">Thank you for sharing. Let's continue tomorrow at 10...</div>
+          </div>
+          <div class="chat-meta">
+            <div class="chat-time">Yesterday</div>
+            <div class="unread-badge">1</div>
+          </div>
+        </div>
+
+        <div class="chat-item">
+          <div class="chat-av" style="background:rgba(16,185,129,0.1)">
+            👩‍🏫<div class="online-dot"></div>
+          </div>
+          <div class="chat-info">
+            <div class="chat-name">Dr. Meera Nair</div>
+            <div class="chat-prev">Here are the breathing exercises I mentioned...</div>
+          </div>
+          <div class="chat-meta">
+            <div class="chat-time">Monday</div>
+          </div>
+        </div>
+
+        <div class="chat-item">
+          <div class="chat-av" style="background:rgba(245,158,11,0.1)">🧘</div>
+          <div class="chat-info">
+            <div class="chat-name">Rev. Sarah Mitchell</div>
+            <div class="chat-prev">You: Thanks for the session, it really helped!</div>
+          </div>
+          <div class="chat-meta">
+            <div class="chat-time">May 19</div>
+          </div>
+        </div>
+
+        <div class="chat-item">
+          <div class="chat-av" style="background:rgba(0,188,212,0.08)">🧑‍⚕️</div>
+          <div class="chat-info">
+            <div class="chat-name">Dr. Arjun Patel</div>
+            <div class="chat-prev">I've uploaded the CBT workbook for you 📄</div>
+          </div>
+          <div class="chat-meta">
+            <div class="chat-time">May 18</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="bnav">
+        <div class="ni"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div></div>
+        <div class="ni"><div class="ni-icon">🔍</div><div class="ni-lbl">Explore</div></div>
+        <div class="ni"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div></div>
+        <div class="ni active"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div><div class="ni-dot"></div></div>
+        <div class="ni"><div class="ni-icon">👤</div><div class="ni-lbl">Profile</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 4: CHAT THREAD
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Chat Thread</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg2"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔋</span></div></div>
+      <div class="thread-header" style="position:relative;z-index:5">
+        <span style="font-size:11px;color:var(--teal);cursor:pointer">← Back</span>
+        <div class="thread-av">👩‍⚕️<div class="online-dot"></div></div>
+        <div>
+          <div class="thread-name">Dr. Priya Sharma</div>
+          <div class="thread-status">● Online</div>
+        </div>
+        <div class="thread-actions">📞 📹</div>
+      </div>
+      <div class="messages-area" style="position:relative;z-index:2">
+
+        <div style="text-align:center;font-size:9px;color:var(--grey2);margin:4px 0">Today, 2:15 PM</div>
+
+        <div class="msg-wrap them">
+          <div class="msg-bubble">Hi John! I've sent you the preparation document for today's session. Please go through it before we meet.</div>
+          <div class="msg-time">2:15 PM</div>
+        </div>
+
+        <!-- Doc message -->
+        <div class="msg-wrap them">
+          <div class="msg-doc">
+            <div class="msg-doc-icon">📄</div>
+            <div class="msg-doc-info">
+              <div class="md-name">Session_Prep_Guide.pdf</div>
+              <div class="md-size">2.4 MB · PDF</div>
+            </div>
+          </div>
+          <div class="msg-time">2:16 PM</div>
+        </div>
+
+        <div class="msg-wrap me">
+          <div class="msg-bubble">Thank you! I'll read through it. Looking forward to our session today 🙏</div>
+          <div class="msg-time">2:31 PM · ✓✓</div>
+        </div>
+
+        <div class="msg-wrap them">
+          <div class="msg-bubble">Great! See you at 2:00 PM. We'll focus on the breathing exercises first.</div>
+          <div class="msg-time">2:33 PM</div>
+        </div>
+
+        <div class="msg-wrap me">
+          <div class="msg-bubble">Perfect 👍</div>
+          <div class="msg-time">2:34 PM · ✓✓</div>
+        </div>
+
+      </div>
+      <div class="chat-input-bar">
+        <span style="font-size:18px;cursor:pointer">📎</span>
+        <div class="chat-inp">Type a message...</div>
+        <div class="send-btn">➤</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 5: TRAINER DASHBOARD
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Trainer Dashboard</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔔</span><span>🔋</span></div></div>
+      <div class="dash-header" style="position:relative;z-index:2">
+        <div class="dash-greeting">Good Morning,</div>
+        <div class="dash-name">Dr. Priya 🌟</div>
+        <!-- Earnings Card -->
+        <div class="earnings-card">
+          <div class="earnings-label">This Month's Earnings</div>
+          <div class="earnings-val">₹28,400</div>
+          <div class="earnings-sub">↑ 18% vs last month</div>
+          <div class="earnings-row">
+            <div class="earn-mini"><div class="earn-mini-val">24</div><div class="earn-mini-lbl">Sessions</div></div>
+            <div class="earn-mini"><div class="earn-mini-val">4.9★</div><div class="earn-mini-lbl">Rating</div></div>
+            <div class="earn-mini"><div class="earn-mini-val">18h</div><div class="earn-mini-lbl">Hours</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-body">
+        <div class="sec-title">Session Requests</div>
+
+        <div class="request-card">
+          <div class="req-top">
+            <div class="req-av">🙋</div>
+            <div>
+              <div class="req-name">John Doe</div>
+              <div class="req-meta">📅 Today · 4:00 PM · 📹 Video · 60 min</div>
+            </div>
+            <div class="tag tag-yellow">Pending</div>
+          </div>
+          <div class="req-btns">
+            <div class="req-btn acc">✓ Accept</div>
+            <div class="req-btn dec">✗ Decline</div>
+          </div>
+        </div>
+
+        <div class="request-card">
+          <div class="req-top">
+            <div class="req-av">👤</div>
+            <div>
+              <div class="req-name">Anjali R.</div>
+              <div class="req-meta">📅 Tomorrow · 11:00 AM · 🎙 Audio · 45 min</div>
+            </div>
+            <div class="tag tag-yellow">Pending</div>
+          </div>
+          <div class="req-btns">
+            <div class="req-btn acc">✓ Accept</div>
+            <div class="req-btn dec">✗ Decline</div>
+          </div>
+        </div>
+
+        <div class="sec-title" style="margin-top:10px">Upcoming Today</div>
+        <div style="background:rgba(0,188,212,0.08);border:1px solid rgba(0,188,212,0.18);border-radius:14px;padding:10px;display:flex;align-items:center;gap:10px">
+          <div style="width:34px;height:34px;border-radius:10px;background:rgba(123,45,139,0.2);display:flex;align-items:center;justify-content:center;font-size:14px">🙋</div>
+          <div style="flex:1">
+            <div style="font-size:11px;font-weight:700">Sarah M.</div>
+            <div style="font-size:9px;color:var(--grey)">2:00 PM · Video · 30 min</div>
+          </div>
+          <div style="font-size:9px;font-weight:700;color:var(--teal)">Start →</div>
+        </div>
+      </div>
+      <div class="bnav">
+        <div class="ni active"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div><div class="ni-dot"></div></div>
+        <div class="ni"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div></div>
+        <div class="ni"><div class="ni-icon">📄</div><div class="ni-lbl">Docs</div></div>
+        <div class="ni"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div></div>
+        <div class="ni"><div class="ni-icon">👤</div><div class="ni-lbl">Profile</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 6: UPLOAD DOCUMENTS
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Upload Documents</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg2"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔋</span></div></div>
+      <div class="back-bar" style="position:relative;z-index:5">
+        <div class="back-btn">← Back</div>
+        <div class="back-title">Upload Resources</div>
+        <span></span>
+      </div>
+      <div class="upload-body">
+
+        <!-- Drop zone -->
+        <div class="upload-zone">
+          <div class="upload-zone-icon">☁️</div>
+          <div class="upload-zone-title">Upload Files</div>
+          <div class="upload-zone-sub">Tap to browse or drag & drop files here</div>
+          <div class="file-types">
+            <div class="ft-chip">📄 PDF</div>
+            <div class="ft-chip">🎬 Video</div>
+            <div class="ft-chip">🎵 Audio</div>
+            <div class="ft-chip">🖼 Image</div>
+          </div>
+        </div>
+
+        <!-- Visibility toggle -->
+        <div class="sec-title">Visibility</div>
+        <div class="vis-toggle" style="margin-bottom:14px">
+          <div class="vis-opt active">🌐 Public</div>
+          <div class="vis-opt">🔒 Private</div>
+        </div>
+
+        <!-- Category -->
+        <div class="input-wrap" style="margin-bottom:14px">
+          <label class="inp-label">Category</label>
+          <div class="inp" style="display:flex;justify-content:space-between;align-items:center">
+            <span>🧠 Psychiatric</span><span style="color:var(--teal)">▾</span>
+          </div>
+        </div>
+
+        <!-- Uploaded files -->
+        <div class="sec-title">Uploaded Files (2)</div>
+        <div class="uploaded-list">
+          <div class="uploaded-item">
+            <div class="file-icon" style="background:rgba(239,68,68,0.12)">📄</div>
+            <div class="file-info">
+              <div class="file-name">CBT_Workbook_2025.pdf</div>
+              <div class="file-meta">2.4 MB · PDF · 🌐 Public</div>
+            </div>
+            <div class="file-actions"><span style="color:var(--teal)">✏️</span><span style="color:var(--red)">🗑</span></div>
+          </div>
+          <div class="uploaded-item">
+            <div class="file-icon" style="background:rgba(0,188,212,0.1)">🎵</div>
+            <div class="file-info">
+              <div class="file-name">Meditation_Guide.mp3</div>
+              <div class="file-meta">8.1 MB · Audio · 🔒 Private</div>
+            </div>
+            <div class="file-actions"><span style="color:var(--teal)">✏️</span><span style="color:var(--red)">🗑</span></div>
+          </div>
+        </div>
+
+        <button class="btn-p">+ Upload New File</button>
+      </div>
+      <div class="bnav">
+        <div class="ni"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div></div>
+        <div class="ni"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div></div>
+        <div class="ni active"><div class="ni-icon">📄</div><div class="ni-lbl">Docs</div><div class="ni-dot"></div></div>
+        <div class="ni"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div></div>
+        <div class="ni"><div class="ni-icon">👤</div><div class="ni-lbl">Profile</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 7: USER PROFILE
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Profile</div>
+  <div class="phone">
+    <div class="screen">
+      <div style="position:absolute;inset:0;background:#07070E"></div>
+      <div class="sb" style="position:absolute;top:0;left:0;right:0;z-index:10"><span>9:41</span><div class="sb-r"><span>⚙️</span><span>🔋</span></div></div>
+      <div class="profile-hero">
+        <div class="profile-hero-bg"></div>
+        <div class="profile-hero-content" style="padding-top:28px">
+          <div class="profile-av">🙋</div>
+          <div class="profile-name">John Doe</div>
+          <div class="profile-plan"><span class="tag tag-teal" style="font-size:8px">🌿 Standard Plan</span></div>
+        </div>
+      </div>
+      <div class="profile-body" style="position:relative;z-index:2">
+        <!-- Usage -->
+        <div class="usage-card">
+          <div class="usage-label">Session Hours Used <span>8 / 12 hrs</span></div>
+          <div class="usage-bar"><div class="usage-fill" style="width:67%"></div></div>
+          <div style="font-size:9px;color:var(--grey);margin-top:6px">4 hours remaining · Renews June 1</div>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(0,188,212,0.1)">📅</div>
+          <div class="menu-label">My Sessions</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(123,45,139,0.15)">💳</div>
+          <div class="menu-label">Subscription & Billing</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(245,158,11,0.1)">⭐</div>
+          <div class="menu-label">My Reviews</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(0,188,212,0.08)">📄</div>
+          <div class="menu-label">Saved Resources</div>
+          <div class="menu-badge">5</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(255,255,255,0.05)">🔔</div>
+          <div class="menu-label">Notifications</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(255,255,255,0.05)">🔒</div>
+          <div class="menu-label">Privacy & Security</div>
+          <div class="menu-chevron">›</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon" style="background:rgba(239,68,68,0.1)">🚪</div>
+          <div class="menu-label" style="color:var(--red)">Log Out</div>
+          <div class="menu-chevron" style="color:var(--red)">›</div>
+        </div>
+      </div>
+      <div class="bnav">
+        <div class="ni"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div></div>
+        <div class="ni"><div class="ni-icon">🔍</div><div class="ni-lbl">Explore</div></div>
+        <div class="ni"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div></div>
+        <div class="ni"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div></div>
+        <div class="ni active"><div class="ni-icon">👤</div><div class="ni-lbl">Profile</div><div class="ni-dot"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 8: TRAINER EARNINGS
+══════════════════════════════════════════ -->
+<div class="phone-wrap">
+  <div class="phone-label">Trainer Earnings</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="gbg"></div>
+      <div class="sb"><span>9:41</span><div class="sb-r"><span>🔋</span></div></div>
+      <div class="earn-header" style="position:relative;z-index:2">
+        <div class="earn-title">Earnings</div>
+        <div class="earn-subtitle">Track your income and payouts</div>
+      </div>
+      <div class="earn-body">
+        <div class="period-toggle">
+          <div class="period-opt">Week</div>
+          <div class="period-opt active">Month</div>
+          <div class="period-opt">Year</div>
+        </div>
+        <div class="total-earn-card">
+          <div class="te-label">Total Earned · May 2025</div>
+          <div class="te-val">₹28,400</div>
+          <div class="te-sub">Platform fee deducted · Net: ₹24,140</div>
+        </div>
+        <div class="mini-stats">
+          <div class="ms-box"><div class="ms-val">24</div><div class="ms-lbl">Sessions</div></div>
+          <div class="ms-box"><div class="ms-val">18h</div><div class="ms-lbl">Hours</div></div>
+          <div class="ms-box"><div class="ms-val">15%</div><div class="ms-lbl">Platform Fee</div></div>
+        </div>
+
+        <div class="sec-title">Recent Transactions</div>
+
+        <div class="earn-history-item">
+          <div class="ehi-av">🙋</div>
+          <div class="ehi-info">
+            <div class="ehi-name">John Doe · Video</div>
+            <div class="ehi-meta">May 24 · 60 min</div>
+          </div>
+          <div class="ehi-amount">+₹1,360</div>
+        </div>
+        <div class="earn-history-item">
+          <div class="ehi-av">👤</div>
+          <div class="ehi-info">
+            <div class="ehi-name">Anjali R. · Audio</div>
+            <div class="ehi-meta">May 23 · 45 min</div>
+          </div>
+          <div class="ehi-amount">+₹1,020</div>
+        </div>
+        <div class="earn-history-item">
+          <div class="ehi-av" style="background:rgba(0,188,212,0.1)">👩</div>
+          <div class="ehi-info">
+            <div class="ehi-name">Riya S. · Video</div>
+            <div class="ehi-meta">May 22 · 30 min</div>
+          </div>
+          <div class="ehi-amount">+₹680</div>
+        </div>
+        <div class="earn-history-item">
+          <div class="ehi-av" style="background:rgba(123,45,139,0.15)">🧑</div>
+          <div class="ehi-info">
+            <div class="ehi-name">Rahul M. · Audio</div>
+            <div class="ehi-meta">May 21 · 60 min</div>
+          </div>
+          <div class="ehi-amount">+₹1,360</div>
+        </div>
+
+        <button class="withdraw-btn">💰 Withdraw ₹24,140</button>
+      </div>
+      <div class="bnav">
+        <div class="ni"><div class="ni-icon">🏠</div><div class="ni-lbl">Home</div></div>
+        <div class="ni"><div class="ni-icon">📅</div><div class="ni-lbl">Sessions</div></div>
+        <div class="ni"><div class="ni-icon">📄</div><div class="ni-lbl">Docs</div></div>
+        <div class="ni"><div class="ni-icon">💬</div><div class="ni-lbl">Chat</div></div>
+        <div class="ni active"><div class="ni-icon">💰</div><div class="ni-lbl">Earnings</div><div class="ni-dot"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end grid -->
+</body>
+</html>
