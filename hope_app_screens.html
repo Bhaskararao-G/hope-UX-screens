@@ -429,15 +429,22 @@ body {
 .nav-item.active .nav-label { color: var(--teal); }
 .nav-item.active .nav-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); margin-top: 2px; }
 .nav-item:not(.active) .nav-label { color: var(--grey2); }
+.paused-screen { display: none; }
+.milestone-continuation {
+  display: block;
+  width: 100%;
+  min-height: 980px;
+  border: 0;
+}
 
 </style>
 </head>
 <body>
 
 <div class="page-header">
-  <h1>Hope App · UI Screens</h1>
+  <h1>Hope App · Milestone 1 Screens</h1>
   <h2>A Brighter Tomorrow</h2>
-  <p>A Pastoral Counseling App — Mobile Screen Designs</p>
+  <p>Splash · Onboarding · Registration · Login · Home · Browse Trainers · Subscription · Profile</p>
 </div>
 
 <div class="grid">
@@ -637,7 +644,7 @@ body {
 
   <!-- ── SCREEN 5: TRAINER DETAIL ── -->
   <div class="phone-wrap">
-    <div class="phone-label">Trainer Detail</div>
+    <div class="phone-label">Browse Trainers / Pastors</div>
     <div class="phone">
       <div class="screen" style="background:#07070E;overflow:hidden">
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;z-index:10">
@@ -685,8 +692,9 @@ body {
   </div>
 
   <!-- ── SCREEN 6: VIDEO CALL ── -->
-  <div class="phone-wrap">
-    <div class="phone-label">Session · Video Call</div>
+  <!-- Paused for now: Session / Video Call is outside the Milestone 1 list. -->
+  <div class="phone-wrap paused-screen">
+    <div class="phone-label">Paused: Session Video Call</div>
     <div class="phone">
       <div class="screen" style="background:#07070E">
         <div class="status-bar" style="position:absolute;top:0;z-index:10;width:100%;background:rgba(0,0,0,0.3)">
@@ -734,7 +742,7 @@ body {
 
   <!-- ── SCREEN 7: SUBSCRIPTION ── -->
   <div class="phone-wrap">
-    <div class="phone-label">Subscription Plans</div>
+    <div class="phone-label">Subscription Plan Management</div>
     <div class="phone">
       <div class="screen" style="background:#07070E;overflow:hidden">
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(123,45,139,0.2) 0%,transparent 50%)"></div>
@@ -799,6 +807,8 @@ body {
   </div>
 
 </div>
+
+<iframe class="milestone-continuation" src="hope_app_screens_part2.html" title="Hope App Milestone 1 registration and profile screens"></iframe>
 
 </body>
 </html>
