@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hope App — More Screen Designs</title>
+<title>Hope App — More Screen Designs Variant 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -444,6 +444,559 @@ body[data-theme="light"] [style*="background: #07070E"],
 body[data-theme="light"] [style*="background:rgba(10,10,15"],
 body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(--screen-bg) !important; }
 
+/* VARIANT 2: calm sanctuary system */
+:root {
+  --teal: #22D3A6;
+  --teal-dark: #0F9F85;
+  --teal-glow: rgba(34,211,166,0.18);
+  --purple: #4F46E5;
+  --purple-light: #A78BFA;
+  --purple-glow: rgba(79,70,229,0.18);
+  --page-bg: #08110F;
+  --card: #101A18;
+  --border: rgba(34,211,166,0.16);
+  --white: #F8FAFC;
+  --grey: #A7B4AF;
+  --grey2: #64746F;
+  --grey3: #1D2B27;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34,211,166,0.13) 0, transparent 28%),
+    radial-gradient(circle at 90% 15%, rgba(167,139,250,0.12) 0, transparent 30%),
+    var(--page-bg);
+}
+.page-header { padding-top: 58px; }
+.page-header h2 { background: linear-gradient(135deg, #D9F99D 0%, var(--teal) 42%, var(--purple-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.page-header::before { background: radial-gradient(ellipse, rgba(34,211,166,0.11) 0%, transparent 70%); }
+.phone {
+  border-radius: 34px;
+  background: #0D1715;
+  border-color: rgba(34,211,166,0.22);
+  box-shadow: 0 0 0 6px #16211E, 0 0 38px rgba(34,211,166,0.11), 0 30px 70px rgba(0,0,0,0.68);
+}
+.phone::before { background: #0D1715; border-color: rgba(34,211,166,0.18); width: 78px; height: 22px; }
+.screen { background: #0B1412; }
+.gbg {
+  background: radial-gradient(ellipse at 18% 15%, rgba(34,211,166,0.18) 0%, transparent 42%),
+              radial-gradient(ellipse at 85% 70%, rgba(167,139,250,0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #0B1714 0%, #09110F 100%);
+}
+.gbg2 {
+  background: radial-gradient(ellipse at 78% 10%, rgba(34,211,166,0.15) 0%, transparent 46%),
+              radial-gradient(ellipse at 20% 82%, rgba(167,139,250,0.15) 0%, transparent 46%),
+              linear-gradient(180deg, #0B1714 0%, #09110F 100%);
+}
+.card,
+.inp,
+.role-card.unsel,
+.sess-card,
+.msg-wrap.them .msg-bubble,
+.msg-doc,
+.chat-search,
+.chat-inp,
+.request-card,
+.stat-box,
+.upload-zone,
+.uploaded-item,
+.usage-card,
+.ms-box {
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(34,211,166,0.16);
+}
+.btn-p,
+.sess-btn.primary,
+.send-btn,
+.vis-opt.active,
+.period-opt.active,
+.unread-badge {
+  background: linear-gradient(135deg, #22D3A6 0%, #D9F99D 100%);
+  color: #07110E;
+}
+.earnings-card,
+.total-earn-card,
+.profile-hero {
+  background: linear-gradient(135deg, rgba(34,211,166,0.16), rgba(167,139,250,0.18));
+  border-color: rgba(34,211,166,0.2);
+}
+.bnav,
+.chat-input-bar { background: rgba(9,17,15,0.95); border-color: rgba(34,211,166,0.14); }
+
+body[data-theme="light"] {
+  --page-bg: #F6F8F4;
+  --white: #13201C;
+  --grey: #68776F;
+  --grey2: #9AA89F;
+  --grey3: #E0E8E1;
+  --screen-bg: #FCFDF8;
+  --surface: rgba(255,255,255,0.86);
+  --surface-soft: rgba(19,32,28,0.045);
+  --surface-border: rgba(15,159,133,0.16);
+  --phone-bg: #E6EEE8;
+}
+body[data-theme="light"] {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34,211,166,0.16) 0, transparent 28%),
+    radial-gradient(circle at 88% 10%, rgba(167,139,250,0.12) 0, transparent 30%),
+    var(--page-bg);
+}
+body[data-theme="light"] .phone {
+  border-radius: 34px;
+  box-shadow: 0 0 0 6px #D9E4DD, 0 0 34px rgba(34,211,166,0.13), 0 30px 58px rgba(19,32,28,0.16);
+}
+body[data-theme="light"] .gbg {
+  background: radial-gradient(ellipse at 18% 15%, rgba(34,211,166,0.12) 0%, transparent 42%),
+              radial-gradient(ellipse at 85% 70%, rgba(167,139,250,0.11) 0%, transparent 45%),
+              var(--screen-bg);
+}
+body[data-theme="light"] .gbg2 {
+  background: radial-gradient(ellipse at 78% 10%, rgba(34,211,166,0.11) 0%, transparent 46%),
+              radial-gradient(ellipse at 20% 82%, rgba(167,139,250,0.1) 0%, transparent 46%),
+              var(--screen-bg);
+}
+
+/* VARIANT 2: layout direction */
+.phone-wrap { gap: 12px; }
+.phone-label { letter-spacing: 1.4px; opacity: 0.9; }
+.sb { padding: 14px 22px 6px; }
+.back-bar {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid rgba(34,211,166,0.1);
+}
+.card {
+  border-radius: 24px;
+  padding: 16px;
+}
+.role-select {
+  display: grid !important;
+  grid-template-columns: 1fr;
+}
+.role-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 12px;
+  border-radius: 20px;
+  padding: 14px;
+}
+.role-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(34,211,166,0.1);
+}
+.step-indicator {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  flex-direction: column;
+}
+.step-dot { width: 4px; height: 24px; }
+.reg-title { font-size: 24px; max-width: 180px; line-height: 1.1; }
+.inp-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.inp {
+  border-radius: 18px;
+  padding: 13px 14px;
+}
+.sessions-list {
+  padding: 0 16px 92px;
+  height: 500px;
+}
+.sess-card {
+  border-radius: 24px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.sess-card::before {
+  left: 14px;
+  right: 14px;
+  top: 0;
+  bottom: auto;
+  width: auto;
+  height: 4px;
+}
+.sess-top {
+  align-items: flex-start;
+}
+.sess-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+}
+.sess-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+.sess-info {
+  background: rgba(255,255,255,0.05);
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.sess-actions { margin-top: 12px; }
+.sess-btn { border-radius: 999px; }
+.chat-search {
+  margin: 8px 18px 14px;
+  border-radius: 22px;
+  padding: 11px 14px;
+}
+.chat-list {
+  padding: 0 14px 92px;
+  height: 500px;
+}
+.chat-item {
+  border: 1px solid rgba(34,211,166,0.12);
+  border-radius: 22px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.04);
+}
+.chat-av {
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+}
+.chat-meta { align-self: flex-start; }
+.thread-header {
+  margin: 10px 12px 0;
+  border-radius: 24px;
+}
+.messages-area {
+  height: 370px;
+  padding: 14px 16px 88px;
+}
+.msg-bubble {
+  border-radius: 18px !important;
+  padding: 10px 12px;
+}
+.chat-input-bar {
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border-radius: 24px;
+  padding: 10px;
+  border: 1px solid rgba(34,211,166,0.14);
+}
+.dash-header,
+.earn-header {
+  padding: 12px 18px 14px;
+}
+.dash-name,
+.earn-title {
+  font-size: 24px;
+}
+.earnings-card,
+.total-earn-card {
+  border-radius: 28px;
+  padding: 18px;
+  text-align: left;
+}
+.earnings-val,
+.te-val { font-size: 34px; }
+.earnings-row,
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.earn-mini,
+.ms-box {
+  border-radius: 16px;
+}
+.dash-body,
+.earn-body {
+  padding: 0 16px 92px;
+  height: 390px;
+}
+.request-card {
+  border-radius: 22px;
+  padding: 14px;
+}
+.req-btn { border-radius: 999px; }
+.upload-body {
+  padding: 14px 16px 24px;
+  height: 510px;
+}
+.upload-zone {
+  min-height: 190px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+.file-types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.uploaded-item {
+  border-radius: 20px;
+  padding: 12px;
+}
+.vis-toggle,
+.period-toggle {
+  border-radius: 999px;
+  padding: 4px;
+}
+.vis-opt,
+.period-opt {
+  border-radius: 999px;
+}
+.profile-hero {
+  height: 210px;
+  margin: 12px;
+  border-radius: 30px;
+}
+.profile-hero-content {
+  align-items: flex-start;
+  padding: 70px 20px 0 !important;
+}
+.profile-av {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+}
+.profile-name { font-size: 22px; }
+.profile-body {
+  padding: 0 16px 92px;
+  height: 385px;
+}
+.usage-card {
+  margin-top: 0;
+  border-radius: 24px;
+}
+.menu-item {
+  border-bottom: 0;
+  border-radius: 18px;
+  padding: 10px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.035);
+}
+.menu-icon {
+  border-radius: 16px;
+}
+.earn-history-item {
+  border: 1px solid rgba(34,211,166,0.1);
+  border-radius: 18px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+.bnav {
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(34,211,166,0.14);
+  padding: 9px 8px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.28);
+}
+.ni-lbl { display: none; }
+.ni-icon { font-size: 18px; }
+.ni.active {
+  width: 42px;
+  height: 34px;
+  border-radius: 16px;
+  justify-content: center;
+  background: rgba(34,211,166,0.14);
+}
+.ni.active .ni-dot { display: none; }
+
+body[data-theme="light"] .chat-item,
+body[data-theme="light"] .menu-item,
+body[data-theme="light"] .sess-info {
+  background: var(--surface-soft);
+}
+body[data-theme="light"] .bnav,
+body[data-theme="light"] .chat-input-bar {
+  box-shadow: 0 18px 38px rgba(19,32,28,0.12);
+}
+
+/* VARIANT 2: reference purple theme */
+:root {
+  --teal: #7C3AED;
+  --teal-dark: #A855F7;
+  --teal-glow: rgba(124,58,237,0.2);
+  --purple: #6D28D9;
+  --purple-light: #C084FC;
+  --purple-glow: rgba(192,132,252,0.22);
+  --page-bg: #150D32;
+  --card: #21143F;
+  --border: rgba(192,132,252,0.22);
+  --white: #F9F7FF;
+  --grey: #C5BDE3;
+  --grey2: #887FB0;
+  --grey3: #2A1951;
+  --screen-bg: #1A1038;
+  --surface: rgba(255,255,255,0.07);
+  --surface-soft: rgba(255,255,255,0.045);
+  --surface-border: rgba(192,132,252,0.2);
+  --phone-bg: #20113F;
+}
+body {
+  background:
+    radial-gradient(circle at 18% -4%, rgba(192,132,252,0.24) 0, transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(124,58,237,0.22) 0, transparent 32%),
+    var(--page-bg);
+}
+.page-header h1,
+.phone-label { color: var(--teal); }
+.page-header h2,
+.te-val {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 48%, #D946EF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.page-header::before { background: radial-gradient(ellipse, rgba(192,132,252,0.18) 0%, transparent 70%); }
+.phone {
+  background: var(--phone-bg);
+  border-color: rgba(221,214,254,0.22);
+  box-shadow: 0 0 0 6px rgba(57,36,100,0.95), 0 0 42px rgba(168,85,247,0.2), 0 34px 76px rgba(5,3,18,0.72);
+}
+.phone::before { background: var(--phone-bg); border-color: rgba(221,214,254,0.18); }
+.screen,
+.screen[style*="background:#07070E"],
+.screen[style*="background: #07070E"] { background: var(--screen-bg) !important; }
+.gbg {
+  background:
+    radial-gradient(ellipse at 28% 12%, rgba(216,180,254,0.24) 0%, transparent 48%),
+    radial-gradient(ellipse at 76% 72%, rgba(124,58,237,0.28) 0%, transparent 52%),
+    linear-gradient(180deg, #221247 0%, var(--screen-bg) 100%);
+}
+.gbg2 {
+  background:
+    radial-gradient(ellipse at 72% 10%, rgba(216,180,254,0.24) 0%, transparent 48%),
+    radial-gradient(ellipse at 24% 78%, rgba(124,58,237,0.26) 0%, transparent 52%),
+    linear-gradient(180deg, #221247 0%, var(--screen-bg) 100%);
+}
+.card,
+.inp,
+.role-card.unsel,
+.sess-card,
+.msg-wrap.them .msg-bubble,
+.msg-doc,
+.chat-search,
+.chat-inp,
+.request-card,
+.stat-box,
+.upload-zone,
+.uploaded-item,
+.usage-card,
+.ms-box,
+.chat-item,
+.menu-item,
+.earn-history-item {
+  background: var(--surface);
+  border-color: var(--surface-border);
+}
+.btn-p,
+.sess-btn.primary,
+.send-btn,
+.vis-opt.active,
+.period-opt.active,
+.unread-badge,
+.menu-badge,
+.withdraw-btn {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 54%, #D946EF 100%);
+  color: #FFFFFF;
+  box-shadow: 0 14px 24px rgba(124,58,237,0.28);
+}
+.earnings-card,
+.total-earn-card,
+.profile-hero {
+  background: linear-gradient(135deg, rgba(124,58,237,0.72), rgba(216,180,254,0.42));
+  border-color: rgba(216,180,254,0.24);
+}
+.bnav,
+.chat-input-bar { background: rgba(31,18,62,0.92); border-color: rgba(216,180,254,0.18); }
+.role-card.selected,
+.profile-av,
+.thread-av,
+.role-icon {
+  background: rgba(124,58,237,0.18);
+  border-color: rgba(216,180,254,0.34);
+}
+
+body[data-theme="light"] {
+  --page-bg: #FCF9FF;
+  --white: #121052;
+  --grey: #77749D;
+  --grey2: #A29DBE;
+  --grey3: #F1E8FF;
+  --card: #FFFFFF;
+  --screen-bg: #FFFCFF;
+  --surface: rgba(255,255,255,0.92);
+  --surface-soft: rgba(124,58,237,0.055);
+  --surface-border: rgba(168,85,247,0.22);
+  --phone-bg: #FFFFFF;
+  --toggle-bg: rgba(255,255,255,0.9);
+  --toggle-text: #121052;
+  --toggle-border: rgba(168,85,247,0.22);
+  --toggle-shadow: rgba(124,58,237,0.16);
+}
+body[data-theme="light"] {
+  background:
+    radial-gradient(circle at 16% -4%, rgba(216,180,254,0.3) 0, transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(245,208,254,0.36) 0, transparent 32%),
+    var(--page-bg);
+}
+body[data-theme="light"] .page-header::before { background: radial-gradient(ellipse, rgba(168,85,247,0.16) 0%, transparent 72%); }
+body[data-theme="light"] .phone {
+  background: var(--phone-bg);
+  border-color: rgba(221,214,254,0.9);
+  box-shadow: 0 0 0 6px rgba(250,245,255,0.95), 0 0 34px rgba(168,85,247,0.18), 0 30px 64px rgba(88,28,135,0.14);
+}
+body[data-theme="light"] .phone::before { background: var(--phone-bg); border-color: rgba(221,214,254,0.8); }
+body[data-theme="light"] .screen,
+body[data-theme="light"] .screen[style*="background:#07070E"],
+body[data-theme="light"] .screen[style*="background: #07070E"] { background: var(--screen-bg) !important; }
+body[data-theme="light"] .gbg {
+  background:
+    radial-gradient(ellipse at 32% 10%, rgba(216,180,254,0.34) 0%, transparent 48%),
+    radial-gradient(ellipse at 76% 72%, rgba(245,208,254,0.4) 0%, transparent 52%),
+    var(--screen-bg);
+}
+body[data-theme="light"] .gbg2 {
+  background:
+    radial-gradient(ellipse at 72% 10%, rgba(216,180,254,0.32) 0%, transparent 48%),
+    radial-gradient(ellipse at 24% 78%, rgba(245,208,254,0.38) 0%, transparent 52%),
+    var(--screen-bg);
+}
+body[data-theme="light"] .card,
+body[data-theme="light"] .inp,
+body[data-theme="light"] .role-card.unsel,
+body[data-theme="light"] .sess-card,
+body[data-theme="light"] .msg-wrap.them .msg-bubble,
+body[data-theme="light"] .msg-doc,
+body[data-theme="light"] .chat-search,
+body[data-theme="light"] .chat-inp,
+body[data-theme="light"] .request-card,
+body[data-theme="light"] .stat-box,
+body[data-theme="light"] .upload-zone,
+body[data-theme="light"] .uploaded-item,
+body[data-theme="light"] .usage-card,
+body[data-theme="light"] .ms-box,
+body[data-theme="light"] .chat-item,
+body[data-theme="light"] .menu-item,
+body[data-theme="light"] .earn-history-item {
+  background: var(--surface);
+  border-color: var(--surface-border);
+  box-shadow: 0 12px 24px rgba(124,58,237,0.08);
+}
+body[data-theme="light"] .bnav,
+body[data-theme="light"] .chat-input-bar { background: rgba(255,255,255,0.9); border-color: rgba(168,85,247,0.2); }
+body[data-theme="light"] .earnings-card,
+body[data-theme="light"] .total-earn-card,
+body[data-theme="light"] .profile-hero {
+  background: linear-gradient(135deg, #7C3AED 0%, #B85CFF 48%, #E9B7FF 100%);
+}
+
 </style>
 </head>
 <body>
@@ -451,8 +1004,8 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
 <button class="theme-toggle" type="button" aria-pressed="false">Light theme</button>
 
 <div class="page-header">
-  <h1>Hope App · Milestone 1 Screens</h1>
-  <h2>Registration & Profile</h2>
+  <h1>Hope App · Variant 2</h1>
+  <h2>Care Flow Screens</h2>
   <p>Only Milestone 1 screens are visible; later-flow screens are paused for now.</p>
 </div>
 
@@ -1086,7 +1639,7 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
 </div><!-- end grid -->
 <script>
 (() => {
-  const key = 'hope-theme';
+  const key = 'hope-theme-v2';
   const button = document.querySelector('.theme-toggle');
   if (window.self !== window.top) document.documentElement.classList.add('is-embedded');
   const applyTheme = (theme) => {
@@ -1096,7 +1649,7 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
       button.setAttribute('aria-pressed', String(theme === 'light'));
     }
   };
-  applyTheme(localStorage.getItem(key) || 'dark');
+  applyTheme(localStorage.getItem(key) || 'light');
   button?.addEventListener('click', () => {
     const nextTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
     localStorage.setItem(key, nextTheme);

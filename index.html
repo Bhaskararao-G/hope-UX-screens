@@ -1,13 +1,81 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hope App UX Screens</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #08110F;
+      color: #F8FAFC;
+      font-family: Arial, sans-serif;
+    }
+    main {
+      width: min(720px, calc(100% - 32px));
+      display: grid;
+      gap: 18px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0 0 12px;
+      color: #A7B4AF;
+      line-height: 1.5;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    a {
+      display: block;
+      padding: 18px;
+      border: 1px solid rgba(34,211,166,0.18);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.055);
+      color: #F8FAFC;
+      text-decoration: none;
+    }
+    strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #22D3A6;
+    }
+    span {
+      color: #A7B4AF;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  </style>
 </head>
-
 <body>
-  <h4>Hope App UX Screens - Milestone 1</h4>
-  <a href="hope_app_screens.html">Milestone 1 Screens</a>
+  <main>
+    <div>
+      <h1>Hope App UX Screens</h1>
+      <p>All design variants include dark and light theme toggles.</p>
+    </div>
+    <div class="links">
+      <a href="hope_app_screens.html">
+        <strong>Variant 1</strong>
+        <span>Original luminous dark theme with light mode.</span>
+      </a>
+      <a href="hope_app_screens_variant2.html">
+        <strong>Variant 2</strong>
+        <span>Purple wellness direction with new layouts.</span>
+      </a>
+      <a href="hope_app_screens_variant3.html">
+        <strong>Variant 3</strong>
+        <span>Cool violet editorial direction with alternate layouts.</span>
+      </a>
+    </div>
+  </main>
 </body>
-
 </html>

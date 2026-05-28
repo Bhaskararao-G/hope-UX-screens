@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hope App — Screen Designs</title>
+<title>Hope App — Screen Designs Variant 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -516,6 +516,440 @@ body[data-theme="light"] [style*="background: #07070E"],
 body[data-theme="light"] [style*="background:rgba(10,10,15"],
 body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(--screen-bg) !important; }
 
+/* VARIANT 2: calm sanctuary system */
+:root {
+  --teal: #22D3A6;
+  --teal-dark: #0F9F85;
+  --teal-glow: rgba(34,211,166,0.18);
+  --purple: #4F46E5;
+  --purple-light: #A78BFA;
+  --purple-glow: rgba(79,70,229,0.18);
+  --page-bg: #08110F;
+  --card: #101A18;
+  --card2: #13201D;
+  --border: rgba(34,211,166,0.16);
+  --white: #F8FAFC;
+  --grey: #A7B4AF;
+  --grey2: #64746F;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(34,211,166,0.13) 0, transparent 28%),
+    radial-gradient(circle at 90% 15%, rgba(167,139,250,0.12) 0, transparent 30%),
+    var(--page-bg);
+}
+.page-header { padding-top: 58px; }
+.page-header h2 { background: linear-gradient(135deg, #D9F99D 0%, var(--teal) 42%, var(--purple-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.page-header::before { background: radial-gradient(ellipse, rgba(34,211,166,0.11) 0%, transparent 70%); }
+.phone {
+  border-radius: 34px;
+  background: #0D1715;
+  border-color: rgba(34,211,166,0.22);
+  box-shadow: 0 0 0 6px #16211E, 0 0 38px rgba(34,211,166,0.11), 0 30px 70px rgba(0,0,0,0.68);
+}
+.phone::before { background: #0D1715; border-color: rgba(34,211,166,0.18); width: 78px; height: 22px; }
+.screen { background: #0B1412; }
+.gradient-bg {
+  background: radial-gradient(ellipse at 18% 15%, rgba(34,211,166,0.18) 0%, transparent 42%),
+              radial-gradient(ellipse at 85% 70%, rgba(167,139,250,0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #0B1714 0%, #09110F 100%);
+}
+.card,
+.trainer-card,
+.stat-box,
+.plan-card.basic,
+.input-field,
+.home-search,
+.social-btn {
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(34,211,166,0.16);
+}
+.btn-primary,
+.book-btn,
+.join-btn,
+.plan-btn.teal,
+.slot.selected,
+.cat-chip.active {
+  background: linear-gradient(135deg, #22D3A6 0%, #D9F99D 100%);
+  color: #07110E;
+}
+.session-banner,
+.plan-card.premium {
+  background: linear-gradient(135deg, rgba(34,211,166,0.16), rgba(167,139,250,0.18));
+  border-color: rgba(34,211,166,0.2);
+}
+.bottom-nav { background: rgba(9,17,15,0.95); border-top-color: rgba(34,211,166,0.14); }
+
+body[data-theme="light"] {
+  --page-bg: #F6F8F4;
+  --white: #13201C;
+  --grey: #68776F;
+  --grey2: #9AA89F;
+  --screen-bg: #FCFDF8;
+  --surface: rgba(255,255,255,0.86);
+  --surface-soft: rgba(19,32,28,0.045);
+  --surface-border: rgba(15,159,133,0.16);
+  --phone-bg: #E6EEE8;
+}
+body[data-theme="light"] {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34,211,166,0.16) 0, transparent 28%),
+    radial-gradient(circle at 88% 10%, rgba(167,139,250,0.12) 0, transparent 30%),
+    var(--page-bg);
+}
+body[data-theme="light"] .phone {
+  border-radius: 34px;
+  box-shadow: 0 0 0 6px #D9E4DD, 0 0 34px rgba(34,211,166,0.13), 0 30px 58px rgba(19,32,28,0.16);
+}
+body[data-theme="light"] .gradient-bg {
+  background: radial-gradient(ellipse at 18% 15%, rgba(34,211,166,0.12) 0%, transparent 42%),
+              radial-gradient(ellipse at 85% 70%, rgba(167,139,250,0.11) 0%, transparent 45%),
+              var(--screen-bg);
+}
+
+/* VARIANT 2: layout direction */
+.phone-wrap { gap: 12px; }
+.phone-label { letter-spacing: 1.4px; opacity: 0.9; }
+.status-bar { padding: 14px 22px 6px; }
+.splash-content {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 30px 96px;
+}
+.logo-h { transform: scale(0.82); transform-origin: left center; margin-bottom: 18px; }
+.hope-word { font-size: 44px; text-align: left; }
+.hope-tag { text-align: left; }
+.hope-sub { max-width: 190px; text-align: left; line-height: 1.5; }
+.splash-dots { left: 30px; bottom: 42px; }
+.onboard-img {
+  width: calc(100% - 34px);
+  height: 250px;
+  margin: 12px auto 0;
+  border-radius: 28px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 24px;
+}
+.onboard-img::after { background: linear-gradient(to bottom, transparent 42%, rgba(9,17,15,0.72) 100%); }
+.onboard-img span { font-size: 54px; }
+.onboard-body {
+  margin-top: -38px;
+  padding: 0 24px 24px;
+}
+.ob-progress {
+  position: absolute;
+  top: -224px;
+  right: 18px;
+  flex-direction: column;
+  width: 4px;
+  height: 96px;
+}
+.ob-bar { width: 4px; height: auto; }
+.onboard-tag { border-radius: 10px; }
+.onboard-h { font-size: 25px; line-height: 1.12; max-width: 210px; }
+.login-content { justify-content: flex-start; padding: 24px 24px 22px; }
+.login-logo {
+  width: 86px;
+  height: 86px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  margin: 18px 0 34px;
+  background: rgba(34,211,166,0.1);
+  border: 1px solid rgba(34,211,166,0.18);
+}
+.login-logo > div { font-size: 20px !important; letter-spacing: 2px !important; }
+.welcome-h { font-size: 26px; }
+.input-group { margin-bottom: 14px; }
+.input-field { border-radius: 18px; padding: 15px 16px; }
+.social-row { margin-top: auto; }
+.home-header {
+  padding: 12px 20px 16px;
+  background: none;
+}
+.home-name { font-size: 24px; margin-bottom: 14px; }
+.home-search { border-radius: 22px; padding: 11px 14px; }
+.home-body { padding: 0 16px 86px; height: 505px; overflow-y: auto; }
+.cat-scroll {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  overflow: visible;
+}
+.cat-chip {
+  justify-content: center;
+  text-align: center;
+  border-radius: 14px;
+}
+.session-banner {
+  border-radius: 24px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.join-btn { border-radius: 999px; padding: 8px 16px; }
+.trainer-card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 10px 12px;
+  align-items: start;
+  border-radius: 22px;
+  padding: 14px;
+}
+.trainer-card .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+}
+.trainer-card .price-tag {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-left: 0;
+  border-radius: 999px;
+}
+.trainer-meta { flex-wrap: wrap; }
+.bottom-nav {
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(34,211,166,0.14);
+  padding: 9px 8px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.28);
+}
+.nav-label { display: none; }
+.nav-icon { font-size: 18px; }
+.nav-item.active {
+  width: 42px;
+  height: 34px;
+  border-radius: 16px;
+  justify-content: center;
+  background: rgba(34,211,166,0.14);
+}
+.nav-item.active .nav-dot { display: none; }
+.trainer-hero {
+  height: 232px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 58px 20px 22px;
+  border-radius: 0 0 34px 34px;
+}
+.trainer-hero::after { background: linear-gradient(to bottom, transparent 20%, rgba(9,17,15,0.9) 100%); }
+.hero-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  margin: 0 0 12px;
+}
+.hero-name { font-size: 22px; }
+.detail-body { padding: 14px 18px 92px; height: 360px; overflow-y: auto; }
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; }
+.stat-box { border-radius: 18px; }
+.slots-row { display: grid; grid-template-columns: repeat(2, 1fr); }
+.slot { text-align: center; }
+.book-row {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 82px;
+}
+.call-video-area {
+  height: 250px;
+  margin: 12px;
+  width: calc(100% - 24px);
+  border-radius: 30px;
+}
+.call-info-bar { border-bottom: 0; padding: 14px 20px; }
+.call-controls {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 24px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(34,211,166,0.12);
+}
+.sub-header { padding: 12px 20px 14px; }
+.sub-body { padding: 0 16px 92px !important; height: 500px !important; }
+.plan-card {
+  border-radius: 24px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.plan-price { font-size: 24px; margin-top: 8px; }
+.plan-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 8px;
+}
+.plan-features li { margin-bottom: 0; }
+
+body[data-theme="light"] .bottom-nav,
+body[data-theme="light"] .call-controls {
+  box-shadow: 0 18px 38px rgba(19,32,28,0.12);
+}
+body[data-theme="light"] .onboard-img::after,
+body[data-theme="light"] .trainer-hero::after {
+  background: linear-gradient(to bottom, transparent 35%, rgba(252,253,248,0.86) 100%);
+}
+
+/* VARIANT 2: reference purple theme */
+:root {
+  --teal: #7C3AED;
+  --teal-dark: #A855F7;
+  --teal-glow: rgba(124,58,237,0.2);
+  --purple: #6D28D9;
+  --purple-light: #C084FC;
+  --purple-glow: rgba(192,132,252,0.22);
+  --page-bg: #150D32;
+  --card: #21143F;
+  --card2: #2A1951;
+  --border: rgba(192,132,252,0.22);
+  --white: #F9F7FF;
+  --grey: #C5BDE3;
+  --grey2: #887FB0;
+  --screen-bg: #1A1038;
+  --surface: rgba(255,255,255,0.07);
+  --surface-soft: rgba(255,255,255,0.045);
+  --surface-border: rgba(192,132,252,0.2);
+  --phone-bg: #20113F;
+}
+body {
+  background:
+    radial-gradient(circle at 18% -4%, rgba(192,132,252,0.24) 0, transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(124,58,237,0.22) 0, transparent 32%),
+    var(--page-bg);
+}
+.page-header h1,
+.phone-label { color: var(--teal); }
+.page-header h2,
+.hope-word {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 48%, #D946EF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.page-header::before { background: radial-gradient(ellipse, rgba(192,132,252,0.18) 0%, transparent 70%); }
+.phone {
+  background: var(--phone-bg);
+  border-color: rgba(221,214,254,0.22);
+  box-shadow: 0 0 0 6px rgba(57,36,100,0.95), 0 0 42px rgba(168,85,247,0.2), 0 34px 76px rgba(5,3,18,0.72);
+}
+.phone::before { background: var(--phone-bg); border-color: rgba(221,214,254,0.18); }
+.screen,
+.screen[style*="background:#07070E"],
+.screen[style*="background: #07070E"],
+.call-screen { background: var(--screen-bg) !important; }
+.gradient-bg {
+  background:
+    radial-gradient(ellipse at 28% 12%, rgba(216,180,254,0.24) 0%, transparent 48%),
+    radial-gradient(ellipse at 76% 72%, rgba(124,58,237,0.28) 0%, transparent 52%),
+    linear-gradient(180deg, #221247 0%, var(--screen-bg) 100%);
+}
+.card,
+.trainer-card,
+.stat-box,
+.plan-card.basic,
+.input-field,
+.home-search,
+.social-btn,
+.call-controls {
+  background: var(--surface);
+  border-color: var(--surface-border);
+}
+.btn-primary,
+.book-btn,
+.join-btn,
+.plan-btn.teal,
+.slot.selected,
+.cat-chip.active {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 54%, #D946EF 100%);
+  color: #FFFFFF;
+  box-shadow: 0 14px 24px rgba(124,58,237,0.28);
+}
+.session-banner,
+.trainer-hero,
+.call-video-area,
+.plan-card.premium {
+  background: linear-gradient(135deg, rgba(124,58,237,0.72), rgba(216,180,254,0.42));
+  border-color: rgba(216,180,254,0.24);
+}
+.onboard-img {
+  background: linear-gradient(135deg, rgba(124,58,237,0.7), rgba(216,180,254,0.44));
+}
+.bottom-nav { background: rgba(31,18,62,0.92); border-color: rgba(216,180,254,0.18); }
+.login-logo,
+.hero-avatar,
+.call-avatar-big {
+  background: rgba(124,58,237,0.18);
+  border-color: rgba(216,180,254,0.34);
+}
+
+body[data-theme="light"] {
+  --page-bg: #FCF9FF;
+  --white: #121052;
+  --grey: #77749D;
+  --grey2: #A29DBE;
+  --card: #FFFFFF;
+  --card2: #FBF8FF;
+  --screen-bg: #FFFCFF;
+  --surface: rgba(255,255,255,0.92);
+  --surface-soft: rgba(124,58,237,0.055);
+  --surface-border: rgba(168,85,247,0.22);
+  --phone-bg: #FFFFFF;
+  --toggle-bg: rgba(255,255,255,0.9);
+  --toggle-text: #121052;
+  --toggle-border: rgba(168,85,247,0.22);
+  --toggle-shadow: rgba(124,58,237,0.16);
+}
+body[data-theme="light"] {
+  background:
+    radial-gradient(circle at 16% -4%, rgba(216,180,254,0.3) 0, transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(245,208,254,0.36) 0, transparent 32%),
+    var(--page-bg);
+}
+body[data-theme="light"] .page-header::before { background: radial-gradient(ellipse, rgba(168,85,247,0.16) 0%, transparent 72%); }
+body[data-theme="light"] .phone {
+  background: var(--phone-bg);
+  border-color: rgba(221,214,254,0.9);
+  box-shadow: 0 0 0 6px rgba(250,245,255,0.95), 0 0 34px rgba(168,85,247,0.18), 0 30px 64px rgba(88,28,135,0.14);
+}
+body[data-theme="light"] .phone::before { background: var(--phone-bg); border-color: rgba(221,214,254,0.8); }
+body[data-theme="light"] .screen,
+body[data-theme="light"] .screen[style*="background:#07070E"],
+body[data-theme="light"] .screen[style*="background: #07070E"],
+body[data-theme="light"] .call-screen { background: var(--screen-bg) !important; }
+body[data-theme="light"] .gradient-bg {
+  background:
+    radial-gradient(ellipse at 32% 10%, rgba(216,180,254,0.34) 0%, transparent 48%),
+    radial-gradient(ellipse at 76% 72%, rgba(245,208,254,0.4) 0%, transparent 52%),
+    var(--screen-bg);
+}
+body[data-theme="light"] .card,
+body[data-theme="light"] .trainer-card,
+body[data-theme="light"] .stat-box,
+body[data-theme="light"] .plan-card.basic,
+body[data-theme="light"] .input-field,
+body[data-theme="light"] .home-search,
+body[data-theme="light"] .social-btn,
+body[data-theme="light"] .call-controls {
+  background: var(--surface);
+  border-color: var(--surface-border);
+  box-shadow: 0 12px 24px rgba(124,58,237,0.08);
+}
+body[data-theme="light"] .bottom-nav { background: rgba(255,255,255,0.9); border-color: rgba(168,85,247,0.2); }
+body[data-theme="light"] .session-banner,
+body[data-theme="light"] .trainer-hero,
+body[data-theme="light"] .call-video-area,
+body[data-theme="light"] .plan-card.premium,
+body[data-theme="light"] .onboard-img {
+  background: linear-gradient(135deg, #7C3AED 0%, #B85CFF 48%, #E9B7FF 100%);
+}
+body[data-theme="light"] .onboard-img::after,
+body[data-theme="light"] .trainer-hero::after {
+  background: linear-gradient(to bottom, transparent 35%, rgba(255,252,255,0.88) 100%);
+}
+
 </style>
 </head>
 <body>
@@ -523,8 +957,8 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
 <button class="theme-toggle" type="button" aria-pressed="false">Light theme</button>
 
 <div class="page-header">
-  <h1>Hope App · Milestone 1 Screens</h1>
-  <h2>A Brighter Tomorrow</h2>
+  <h1>Hope App · Variant 2</h1>
+  <h2>Guided Care Screens</h2>
   <p>Splash · Onboarding · Registration · Login · Home · Browse Pastoral Guides · Subscription · Profile</p>
 </div>
 
@@ -889,11 +1323,11 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
 
 </div>
 
-<iframe class="milestone-continuation" src="hope_app_screens_part2.html" title="Hope App Milestone 1 registration and profile screens"></iframe>
+<iframe class="milestone-continuation" src="hope_app_screens_variant2_part2.html" title="Hope App variant 2 registration and profile screens"></iframe>
 
 <script>
 (() => {
-  const key = 'hope-theme';
+  const key = 'hope-theme-v2';
   const button = document.querySelector('.theme-toggle');
   const applyTheme = (theme) => {
     document.body.dataset.theme = theme;
@@ -905,7 +1339,7 @@ body[data-theme="light"] [style*="background: rgba(10,10,15"] { background: var(
       frame.contentWindow?.postMessage({ type: 'hope-theme', theme }, '*');
     });
   };
-  applyTheme(localStorage.getItem(key) || 'dark');
+  applyTheme(localStorage.getItem(key) || 'light');
   button?.addEventListener('click', () => {
     const nextTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
     localStorage.setItem(key, nextTheme);
